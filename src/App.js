@@ -22,6 +22,10 @@ function App() {
   useEffect(() => {
     setHeaderHeight()
     window.addEventListener('resize', setHeaderHeight)
+
+    return () => {
+      window.removeEventListener('resize', setHeaderHeight)
+    }
   }, [])
 
   return (
